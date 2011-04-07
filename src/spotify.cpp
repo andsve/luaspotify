@@ -128,7 +128,7 @@ int LUA_API luaopen_spotify (lua_State *L) {
   LUA_ENUM(L, SP_ERROR_INBOX_IS_FULL);
   LUA_ENUM(L, SP_ERROR_NO_CACHE);
   LUA_ENUM(L, SP_ERROR_NO_SUCH_USER);
-  lua_setfield (L, -2, "sp_error");
+  lua_setfield (L, -2, "error");
 	
 	/*
 	 * Session subsystem enums.
@@ -140,12 +140,12 @@ int LUA_API luaopen_spotify (lua_State *L) {
   LUA_ENUM(L, SP_CONNECTION_STATE_LOGGED_IN);
   LUA_ENUM(L, SP_CONNECTION_STATE_DISCONNECTED);
   LUA_ENUM(L, SP_CONNECTION_STATE_UNDEFINED);
-	lua_setfield (L, -2, "sp_connectionstate");
+	lua_setfield (L, -2, "connectionstate");
 	
 	/* sp_connectionstate enums */
 	lua_newtable(L);
   LUA_ENUM(L, SP_SAMPLETYPE_INT16_NATIVE_ENDIAN);
-	lua_setfield (L, -2, "sp_sampletype");
+	lua_setfield (L, -2, "sampletype");
 	
 	/*
 	TODO: sp_bitrate enums (?)
@@ -157,7 +157,7 @@ int LUA_API luaopen_spotify (lua_State *L) {
   LUA_ENUM(L, SP_PLAYLIST_TYPE_START_FOLDER);
   LUA_ENUM(L, SP_PLAYLIST_TYPE_END_FOLDER);
   LUA_ENUM(L, SP_PLAYLIST_TYPE_PLACEHOLDER);
-	lua_setfield (L, -2, "sp_playlist_type");
+	lua_setfield (L, -2, "playlist_type");
 	
 	
 	/*
@@ -170,7 +170,7 @@ int LUA_API luaopen_spotify (lua_State *L) {
   LUA_ENUM(L, SP_RELATION_TYPE_NONE);
   LUA_ENUM(L, SP_RELATION_TYPE_UNIDIRECTIONAL);
   LUA_ENUM(L, SP_RELATION_TYPE_BIDIRECTIONAL);
-	lua_setfield (L, -2, "sp_relation_type");
+	lua_setfield (L, -2, "relation_type");
 	
 	/*
 	 * Links subsystem enums.
@@ -187,7 +187,7 @@ int LUA_API luaopen_spotify (lua_State *L) {
   LUA_ENUM(L, SP_LINKTYPE_PROFILE);
   LUA_ENUM(L, SP_LINKTYPE_STARRED);
   LUA_ENUM(L, SP_LINKTYPE_LOCALTRACK);
-  lua_setfield (L, -2, "sp_linktype");
+  lua_setfield (L, -2, "linktype");
 
 	
 	return 1;

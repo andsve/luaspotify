@@ -108,6 +108,7 @@ void luasp_cb_metadata_updated(sp_session *session)
 
 void luasp_cb_connection_error(sp_session *session, sp_error error)
 {
+  printf("connection_error..............\n");
   if (active_sessions.find(session) != active_sessions.end() && active_sessions[session]->connection_error != 0)
   {
     active_sessions[session]->connection_error_buffer.push_front(error);
