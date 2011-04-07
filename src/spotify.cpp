@@ -24,7 +24,7 @@ int luasp_error_message(lua_State *L) {
 		lua_error(L);
 	}
 	
-  lua_pushstring(L, sp_error_message(lua_tointeger(L, 1)) );
+  lua_pushstring(L, sp_error_message((sp_error)lua_tointeger(L, 1)) );
   
   return 1;
 }
