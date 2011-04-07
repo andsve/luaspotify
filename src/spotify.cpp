@@ -15,9 +15,26 @@ static int luasp_debug (lua_State *L) {
 	return 0;
 }
 
+int luasp_error_message(lua_State *L) {
+  // error_string = spotify.error_message(error)
+  
+  if (lua_gettop(L) != 1 || !lua_isnumber(L, 1))
+	{
+		lua_pushstring(L, "incorrect argument to error_message(...)");
+		lua_error(L);
+	}
+	
+  lua_pushstring(L, sp_error_message(lua_tointeger(L, 1)) );
+  
+  return 1;
+}
+
 int LUA_API luaopen_spotify (lua_State *L) {
 	struct luaL_reg driver[] = {
+	  
+	  /* genaral functions*/
 		{"debug", luasp_debug},
+		{"error_message", luasp_error_message},
 		
 		/* sp_session_* (from session.h) */
 		{"session_create", luasp_session_create},
